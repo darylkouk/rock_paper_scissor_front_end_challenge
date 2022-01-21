@@ -1,0 +1,192 @@
+
+.pentagon-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 35rem
+}
+.pentagon-image {
+    position: absolute;
+    z-index: -2;
+    height: 250px;
+    width: 250px
+}
+.icons-container {
+    position: absolute;
+    height: 250px;
+    width: 250px
+}
+.icon-image-one {
+    position: absolute;
+    top: -40px;
+    left: calc(50% - 40px);
+    width: 80px;
+    height: 80px;
+    background: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center
+}
+.icon-image-one::after {
+    position: absolute;
+    width: 110px;
+    height: 110px;
+    content: '';
+    border-radius: 50%;
+    background-image: linear-gradient(hsl(39, 89%, 49%), hsl(40, 84%, 53%));
+    z-index: -1;
+}
+
+.icon-image-two {
+    position: absolute;
+    top: 30%;
+    left: -40px;
+    width: 80px;
+    height: 80px;
+    background: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center
+}
+.icon-image-two::after {
+    position: absolute;
+    width: 110px;
+    height: 110px;
+    content: '';
+    border-radius: 50%;
+    background-image: linear-gradient(hsl(39, 89%, 49%), hsl(40, 84%, 53%));
+    z-index: -1;
+}
+
+.icon-image-three {
+    position: absolute;
+    top: 30%;
+    left: calc(100% - 40px);
+    width: 80px;
+    height: 80px;
+    background: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center
+}
+.icon-image-three::after {
+    position: absolute;
+    width: 110px;
+    height: 110px;
+    content: '';
+    border-radius: 50%;
+    background-image: linear-gradient(hsl(39, 89%, 49%), hsl(40, 84%, 53%));
+    z-index: -1;
+}
+
+.icon-image-four {
+    position: absolute;
+    bottom: -40px;
+    left: 5%;
+    width: 80px;
+    height: 80px;
+    background: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center
+}
+.icon-image-four::after {
+    position: absolute;
+    width: 110px;
+    height: 110px;
+    content: '';
+    border-radius: 50%;
+    background-image: linear-gradient(hsl(39, 89%, 49%), hsl(40, 84%, 53%));
+    z-index: -1;
+}
+
+.icon-image-five {
+    position: absolute;
+    bottom: -40px;
+    left: calc(80% - 40px);
+    width: 80px;
+    height: 80px;
+    background: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center
+}
+.icon-image-five::after {
+    position: absolute;
+    width: 110px;
+    height: 110px;
+    content: '';
+    border-radius: 50%;
+    background-image: linear-gradient(hsl(39, 89%, 49%), hsl(40, 84%, 53%));
+    z-index: -1;
+}
+
+@media (min-width: 400px) {
+    .pentagon-image {
+        height: 313px;
+        width: 329px
+    }
+    .icons-container {
+        height: 313px;
+        width: 329px
+    }
+    .icon-image-one {
+        top: -50px;
+        left: calc(50% - 50px);
+        width: 100px;
+        height: 100px;
+    }
+    .icon-image-one::after {
+        width: 130px;
+        height: 130px;
+    }
+    
+    .icon-image-two {
+        top: 30%;
+        left: -50px;
+        width: 100px;
+        height: 100px;
+    }
+    .icon-image-two::after {
+        width: 130px;
+        height: 130px;
+    }
+    
+    .icon-image-three {
+        top: 30%;
+        left: calc(100% - 50px);
+        width: 100px;
+        height: 100px;
+    }
+    .icon-image-three::after {
+        width: 130px;
+        height: 130px;
+    }
+    
+    .icon-image-four {
+        bottom: -50px;
+        left: 5%;
+        width: 100px;
+        height: 100px;
+    }
+    .icon-image-four::after {
+        width: 130px;
+        height: 130px;
+    }
+    
+    .icon-image-five {
+        bottom: -50px;
+        left: calc(80% - 50px);
+        width: 100px;
+        height: 100px;
+    }
+    .icon-image-five::after {
+        width: 130px;
+        height: 130px;
+    }
+}

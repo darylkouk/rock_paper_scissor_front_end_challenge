@@ -1,0 +1,16 @@
+.button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0.5rem;
+    border: solid hsl(217, 16%, 45%);
+    width: 120px;
+    height: 40px;
+    cursor: pointer;
+}
+
+.button-title {
+    text-transform: uppercase;
+    color: hsl(217, 16%, 45%);
+    font-size: 1.2rem;
+}

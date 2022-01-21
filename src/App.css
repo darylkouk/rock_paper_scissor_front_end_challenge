@@ -1,0 +1,10 @@
+@import url('https://fonts.googleapis.com/css?family=Barlow Semi Condensed');
+
+* {
+    font-family: 'Barlow Semi Condensed';
+    font-weight: 600;
+}
+
+body {
+    background: radial-gradient(hsl(214, 47%, 23%), hsl(237, 49%, 15%));
+}
