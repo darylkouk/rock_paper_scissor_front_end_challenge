@@ -1,11 +1,7 @@
 import React from 'react';
 import pentagonImage from '../images/bg-pentagon.svg';
-import rockIcon from '../images/icon-rock.svg';
-import paperIcon from '../images/icon-paper.svg';
-import lizardIcon from '../images/icon-lizard.svg';
-import scissorIcon from '../images/icon-scissors.svg';
-import spockIcon from '../images/icon-spock.svg'
 import './Assets/Pentagon.css';
+import Icon from './Icon';
 
 function Pentagon() {
 
@@ -15,19 +11,19 @@ function Pentagon() {
                 <img className='pentagon-image' src={pentagonImage}></img>
                 <div className='icons-container'>
                     <div className='icon-image-one'>
-                        <img src={scissorIcon}></img>
+                        <Icon type='scissor' />
                     </div>
                     <div className='icon-image-two'>
-                        <img src={spockIcon}></img>
+                        <Icon type='spock' />
                     </div>
                     <div className='icon-image-three'>
-                        <img src={paperIcon}></img>
+                        <Icon type='paper' />
                     </div>
                     <div className='icon-image-four'>
-                        <img src={lizardIcon}></img>
+                        <Icon type='lizard' />
                     </div>
                     <div className='icon-image-five'>
-                        <img src={rockIcon}></img>
+                        <Icon type='rock' />
                     </div>
                 </div>
             </div>
