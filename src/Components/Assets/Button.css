@@ -1,16 +1,27 @@
 .button-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    box-sizing: border-box;
     border-radius: 0.5rem;
     border: solid hsl(217, 16%, 45%);
-    width: 120px;
-    height: 40px;
+    width: 150px;
+    height: 35px;
     cursor: pointer;
 }
 
 .button-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
     text-transform: uppercase;
     color: hsl(217, 16%, 45%);
-    font-size: 1.2rem;
+    font-size: 1.1rem;
+}
+
+.white-variant {
+    background-color: white;
+    border: none
+}
+
+.white-variant .button-title {
+    color: hsl(229, 25%, 31%);
 }

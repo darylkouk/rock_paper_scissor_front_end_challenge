@@ -11,7 +11,7 @@ function Button(props) {
     }
 
     return ( 
-        <div className='button-container' onClick={handleButton}>
+        <div className={props.isVariant? 'button-container white-variant':'button-container'} onClick={handleButton}>
             <div className='button-title'>{props.title}</div>
         </div>
     );
