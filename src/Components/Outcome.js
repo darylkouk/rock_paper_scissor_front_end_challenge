@@ -17,6 +17,8 @@ function Outcome(props) {
     ];
 
     const [IsHidden, setIsHidden] = useState(true);
+    const [HousePick, setHousePick] = useState(selectionArray[Math.floor(Math.random()*5)]);
+    const [Result, setResult] = useState();
 
     const match = () => {
         if(!window.matchMedia)
@@ -49,7 +51,7 @@ function Outcome(props) {
         return flag? 
             <div className='outcome-result' style={IsHidden? {display:'none'}:{}}>
                 <div className='outcome-title'>
-                    you losed
+                    {Result}
                 </div>
                 <Button title='play again' isVariant={true} onClick={handlePlayAgain} />
             </div>
@@ -59,9 +61,53 @@ function Outcome(props) {
 
     useEffect(() => {
         setTimeout(() => {
+            checkWinLogic();
             setIsHidden(false);
         }, 2000);
     });
+
+    const checkWinLogic = () => {
+        if(props.playerPick == 'scissor') {
+            if(HousePick == 'paper' || HousePick == 'lizard')
+                setResult('you win');
+            else if(HousePick == 'scissor')
+                setResult('you draw');
+            else
+                setResult('you lose');
+        }
+        else if(props.playerPick == 'paper') {
+            if(HousePick == 'spock' || HousePick == 'rock')
+                setResult('you win');
+            else if(HousePick == 'paper')
+                setResult('you draw');
+            else
+                setResult('you lose');
+        }
+        else if(props.playerPick == 'rock') {
+            if(HousePick == 'scissor' || HousePick == 'lizard')
+                setResult('you win');
+            else if(HousePick == 'rock')
+                setResult('you draw');
+            else
+                setResult('you lose');
+        }
+        else if(props.playerPick == 'lizard') {
+            if(HousePick == 'spock' || HousePick == 'paper')
+                setResult('you win');
+            else if(HousePick == 'lizard')
+                setResult('you draw');
+            else
+                setResult('you lose');
+        }
+        else if(props.playerPick == 'spock') {
+            if(HousePick == 'scissor' || HousePick == 'rock')
+                setResult('you win');
+            else if(HousePick == 'paper')
+                setResult('you draw');
+            else
+                setResult('you lose');
+        }
+    }
 
     return (
         <div className='outcome-container'>
@@ -79,7 +125,7 @@ function Outcome(props) {
                     the house picked
                 </div>
                 <div className='outcome-icon'>
-                    <Icon type={selectionArray[Math.floor(Math.random()*5)]} hidden={IsHidden} />
+                    <Icon type={HousePick} hidden={IsHidden} />
                 </div>
             </div>
             {renderResult(!IsNotMobile)}
