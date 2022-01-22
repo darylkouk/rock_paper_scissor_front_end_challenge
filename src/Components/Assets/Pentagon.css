@@ -22,6 +22,7 @@
     left: calc(50% - 40px);
     width: 80px;
     height: 80px;
+    cursor: pointer;
 }
 
 .icon-image-two {
@@ -30,6 +31,7 @@
     left: -40px;
     width: 80px;
     height: 80px;
+    cursor: pointer;
 }
 
 .icon-image-three {
@@ -38,6 +40,7 @@
     left: calc(100% - 40px);
     width: 80px;
     height: 80px;
+    cursor: pointer;
 }
 
 .icon-image-four {
@@ -46,6 +49,7 @@
     left: 5%;
     width: 80px;
     height: 80px;
+    cursor: pointer;
 }
 
 .icon-image-five {
@@ -54,6 +58,7 @@
     left: calc(80% - 40px);
     width: 80px;
     height: 80px;
+    cursor: pointer;
 }
 
 @media (min-width: 400px) {

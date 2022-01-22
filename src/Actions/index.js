@@ -1,4 +1,4 @@
-import { OPEN_MODAL, CLOSE_MODAL } from "./types";
+import { OPEN_MODAL, CLOSE_MODAL, PLAYER_PICK } from "./types";
 
 export function openModal() {
     return ( {
@@ -12,4 +12,12 @@ export function closeModal() {
         type: CLOSE_MODAL,
         payload: false
     } );
+}
+
+
+export function handlePlayerPick(payload) {
+    return ( {
+        type: PLAYER_PICK,
+        payload: payload
+    } )
 }

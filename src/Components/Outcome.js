@@ -3,8 +3,10 @@ import { useEffect, useState } from 'react';
 import Icon from './Icon';
 import './Assets/Outcome.css';
 import Button from './Button';
+import { connect } from 'react-redux';
+import * as actions from '../Actions';
 
-function Outcome() {
+function Outcome(props) {
 
     const selectionArray = [
         'scissor',
@@ -39,13 +41,17 @@ function Outcome() {
         };
     });
 
+    const handlePlayAgain = () => {
+        props.handlePlayerPick('');
+    }
+
     const renderResult = (flag) => {
         return flag? 
             <div className='outcome-result' style={IsHidden? {display:'none'}:{}}>
                 <div className='outcome-title'>
                     you losed
                 </div>
-                <Button title='play again' isVariant={true} />
+                <Button title='play again' isVariant={true} onClick={handlePlayAgain} />
             </div>
             :
             <div></div>
@@ -55,7 +61,7 @@ function Outcome() {
         setTimeout(() => {
             setIsHidden(false);
         }, 2000);
-    })
+    });
 
     return (
         <div className='outcome-container'>
@@ -64,7 +70,7 @@ function Outcome() {
                     you picked
                 </div>
                 <div className='outcome-icon'>
-                    <Icon type='paper' />
+                    <Icon type={props.playerPick} />
                 </div>
             </div>
             {renderResult(IsNotMobile)}
@@ -81,4 +87,10 @@ function Outcome() {
     );
 }
 
-export default Outcome;
+function mapStateToProps(state) {
+    return {
+        playerPick: state.playerPick
+    }
+}
+
+export default connect(mapStateToProps, actions)(Outcome);
