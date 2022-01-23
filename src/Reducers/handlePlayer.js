@@ -7,7 +7,6 @@ function handlePlayer(state='', action) {
             state = action.payload;
             return state;
         default:
-            state = '';
             return state;
     }
 }
