@@ -1,5 +1,21 @@
 # Frontend Mentor - Rock, Paper, Scissors
 
+## My Solution.
+
+Built with React, Redux and native CSS with mobile first approach.
+Checkout it out at https://rock-paper-scissor-challenge.herokuapp.com/.
+
+Criteria
+  - View the optimal layout for the game depending on their device's screen size
+  	* Mobile responsive with native CSS.
+  - Play Rock, Paper, Scissors against the computer
+  	* Completed **Bonus** Play Rock, Paper, Scissors, Lizard, Spock.
+  - Maintain the state of the score after refreshing the browser _(optional)_
+  	* Not implemented.
+  	* Scores are saved in redux state.
+  - **Bonus**: Play Rock, Paper, Scissors, Lizard, Spock against the computer _(optional)_
+		* Completed.
+
 ![Design preview for the Rock, Paper, Scissors coding challenge](./design/desktop-preview.jpg)
 
 ## Welcome! 👋
