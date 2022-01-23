@@ -1,6 +1,7 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
-function ScoreBanner() {
+function ScoreBanner(props) {
     const styles = {
         'score-container': {
             verticalAlign: 'center',
@@ -30,15 +31,23 @@ function ScoreBanner() {
             fontWeight: '700'
         }
     }
+    
+
     return ( 
         <div className='score-container' style={styles['score-container']}>
             <div className='score-banner' style={styles['score-banner']}>
                 <div className='score-title' style={styles['score-title']}>score</div>
-                <div className='score-value' style={styles['score-value']}>12</div>
+                <div className='score-value' style={styles['score-value']}>{props.score}</div>
             </div>
         </div>
 
     );
 }
 
-export default ScoreBanner;
+function mapStateToProps(state) {
+    return {
+        score: state.score
+    }
+}
+
+export default connect(mapStateToProps, null)(ScoreBanner);

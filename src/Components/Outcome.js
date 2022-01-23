@@ -62,9 +62,15 @@ function Outcome(props) {
     useEffect(() => {
         setTimeout(() => {
             checkWinLogic();
+            if(Result == 'you win') {
+                props.handleScore(1);
+            }
+            else if(Result == 'you lose') {
+                props.handleScore(-1);
+            }
             setIsHidden(false);
         }, 2000);
-    });
+    }, [IsHidden]);
 
     const checkWinLogic = () => {
         if(props.playerPick == 'scissor') {
