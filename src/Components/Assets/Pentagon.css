@@ -3,7 +3,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 35rem
+    height: 400px;
 }
 .pentagon-image {
     position: absolute;
@@ -62,6 +62,9 @@
 }
 
 @media (min-width: 400px) {
+    .pentagon-container {
+        height: 500px;
+    }
     .pentagon-image {
         height: 313px;
         width: 329px

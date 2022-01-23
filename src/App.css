@@ -8,3 +8,17 @@
 body {
     background: radial-gradient(hsl(214, 47%, 23%), hsl(237, 49%, 15%));
 }
+
+.app-button {
+    display: flex;
+    justify-content: center;
+    padding: 50px 0 0 0;
+}
+
+@media (min-width: 600px) {
+    .app-button {
+        display: flex;
+        justify-content: flex-end;
+        padding: 0 15rem;
+    }   
+}
