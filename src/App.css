@@ -19,6 +19,6 @@ body {
     .app-button {
         display: flex;
         justify-content: flex-end;
-        padding: 0 15rem;
+        padding: 50px 100px 0 0;
     }   
 }
