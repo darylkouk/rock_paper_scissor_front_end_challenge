@@ -4,19 +4,31 @@ import './App.css';
 import Pentagon from './Components/Pentagon';
 import Button from './Components/Button';
 import Modal from './Components/Modal';
+import Outcome from './Components/Outcome';
+import { connect } from 'react-redux';
+import * as actions from './Actions';
 
+function App(props) {
 
-function App() {
-
-
+    const handlePopup = () => {
+        props.openModal();
+    }
 
     return ( 
     <div className='app-layout'>
         <HeaderBanner />
-        <Pentagon />
-        <Button title="rules" />
+        {props.playerHasPicked ==''? <Pentagon /> : <Outcome />}
         <Modal />
+        <div className='app-button'>
+            <Button title="rules" onClick={handlePopup} />
+        </div>
     </div> );
 }
 
-export default App;
+function mapStateToProps(state) {
+    return {
+        playerHasPicked: state.playerPick
+    }
+}
+
+export default connect(mapStateToProps, actions)(App);
