@@ -12,7 +12,7 @@ function Modal(props) {
         if (!window.matchMedia) {
             return false;
         }
-        return window.matchMedia('(min-width:400px)').matches;
+        return window.matchMedia('(min-width:520px)').matches;
     };
 
     const [IsNotMobile, setIsNotMobile] = useState(match);
