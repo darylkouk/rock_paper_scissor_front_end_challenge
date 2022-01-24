@@ -107,3 +107,13 @@
     box-shadow: 0px 5px hsla(349, 70%, 56%, 0.70);
     z-index: -1;
 }
+
+.highlight::before {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    background-image: repeating-radial-gradient(circle at center, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.05) 50px);
+    width: calc(100% + 300px);
+    height: calc(100% + 300px);
+    z-index: -2;
+}
