@@ -108,7 +108,7 @@ function Outcome(props) {
         else if(props.playerPick == 'spock') {
             if(HousePick == 'scissor' || HousePick == 'rock')
                 setResult('you win');
-            else if(HousePick == 'paper')
+            else if(HousePick == 'spock')
                 setResult('you draw');
             else
                 setResult('you lose');
@@ -122,7 +122,7 @@ function Outcome(props) {
                     you picked
                 </div>
                 <div className='outcome-icon'>
-                    <Icon type={props.playerPick} />
+                    <Icon type={props.playerPick} highlight={Result == 'you win'}/>
                 </div>
             </div>
             {renderResult(IsNotMobile)}
@@ -131,7 +131,7 @@ function Outcome(props) {
                     the house picked
                 </div>
                 <div className='outcome-icon'>
-                    <Icon type={HousePick} hidden={IsHidden} />
+                    <Icon type={HousePick} hidden={IsHidden} highlight={Result == 'you lose'} />
                 </div>
             </div>
             {renderResult(!IsNotMobile)}
