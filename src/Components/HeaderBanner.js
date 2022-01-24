@@ -32,7 +32,7 @@ function HeaderBanner() {
                     <div>rock</div>
                     <div>paper</div>
                     <div>scissor</div>
-                    <div>splock</div>
+                    <div>spock</div>
                     <div>lizard</div>
                 </div>
                 <ScoreBanner />

@@ -16,7 +16,7 @@
 
 .outcome-item {
     display: flex;
-    flex-direction: column;
+    flex-direction: column-reverse;
     align-items: center;
     padding: 1rem;
 }
@@ -30,17 +30,21 @@
 .outcome-result > * {
     padding: 1rem;
 }
+.outcome-result .button-title {
+    font-size: 0.8rem;
+}
 
 .outcome-title {
     text-transform: uppercase;
     font-weight: 700;
     font-size: 1.1rem;
     color: white;
-    padding: 0 0 40px 0;
+    padding: 40px 0 0 0;
 }
 
 .outcome-result .outcome-title {
     padding: 0px;
+    font-size: 1.8rem;
 }
 
 @media (min-width:960px) {
@@ -54,5 +58,10 @@
 
     .outcome-item {
         padding: 5rem;
+        flex-direction: column;
+    }
+
+    .outcome-title {
+        padding: 0 0 40px 0;
     }
 }
