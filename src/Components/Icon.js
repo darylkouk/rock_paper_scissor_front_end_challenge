@@ -17,7 +17,7 @@ function Icon(props) {
                     </div>);
             case 'rock':
                 return(
-                    <div className={props.highlight? 'icon-scissor rock': 'icon-rock'} style={props.hidden? {visibility:'hidden'}: {}}>
+                    <div className={props.highlight? 'icon-rock highlight': 'icon-rock'} style={props.hidden? {visibility:'hidden'}: {}}>
                         <img src={rockIcon}></img>
                     </div>);
             case 'paper':

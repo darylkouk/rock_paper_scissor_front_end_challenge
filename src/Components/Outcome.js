@@ -60,55 +60,60 @@ function Outcome(props) {
     }
 
     useEffect(() => {
-        setTimeout(() => {
-            checkWinLogic();
-            if(Result == 'you win') {
-                props.handleScore(1);
-            }
-            else if(Result == 'you lose') {
-                props.handleScore(-1);
-            }
+        const timer = setTimeout(() => {
             setIsHidden(false);
-        }, 2000);
+        }, 1000);
+
+        return () => clearTimeout(timer);
+    }, []);
+
+    useEffect(() => {
+        checkWinLogic();
+        if(Result === 'you win') {
+            props.handleScore(1);
+        }
+        else if(Result === 'you lose') {
+            props.handleScore(-1);
+        }
     }, [IsHidden]);
 
     const checkWinLogic = () => {
-        if(props.playerPick == 'scissor') {
-            if(HousePick == 'paper' || HousePick == 'lizard')
+        if(props.playerPick === 'scissor') {
+            if(HousePick === 'paper' || HousePick === 'lizard')
                 setResult('you win');
-            else if(HousePick == 'scissor')
+            else if(HousePick === 'scissor')
                 setResult('you draw');
             else
                 setResult('you lose');
         }
-        else if(props.playerPick == 'paper') {
-            if(HousePick == 'spock' || HousePick == 'rock')
+        else if(props.playerPick === 'paper') {
+            if(HousePick === 'spock' || HousePick === 'rock')
                 setResult('you win');
-            else if(HousePick == 'paper')
+            else if(HousePick === 'paper')
                 setResult('you draw');
             else
                 setResult('you lose');
         }
-        else if(props.playerPick == 'rock') {
-            if(HousePick == 'scissor' || HousePick == 'lizard')
+        else if(props.playerPick === 'rock') {
+            if(HousePick === 'scissor' || HousePick === 'lizard')
                 setResult('you win');
-            else if(HousePick == 'rock')
+            else if(HousePick === 'rock')
                 setResult('you draw');
             else
                 setResult('you lose');
         }
-        else if(props.playerPick == 'lizard') {
-            if(HousePick == 'spock' || HousePick == 'paper')
+        else if(props.playerPick === 'lizard') {
+            if(HousePick === 'spock' || HousePick === 'paper')
                 setResult('you win');
-            else if(HousePick == 'lizard')
+            else if(HousePick === 'lizard')
                 setResult('you draw');
             else
                 setResult('you lose');
         }
-        else if(props.playerPick == 'spock') {
-            if(HousePick == 'scissor' || HousePick == 'rock')
+        else if(props.playerPick === 'spock') {
+            if(HousePick === 'scissor' || HousePick === 'rock')
                 setResult('you win');
-            else if(HousePick == 'spock')
+            else if(HousePick === 'spock')
                 setResult('you draw');
             else
                 setResult('you lose');
@@ -122,7 +127,7 @@ function Outcome(props) {
                     you picked
                 </div>
                 <div className='outcome-icon'>
-                    <Icon type={props.playerPick} highlight={Result == 'you win'}/>
+                    <Icon type={props.playerPick} highlight={Result === 'you win' && !IsHidden}/>
                 </div>
             </div>
             {renderResult(IsNotMobile)}
@@ -131,7 +136,7 @@ function Outcome(props) {
                     the house picked
                 </div>
                 <div className='outcome-icon'>
-                    <Icon type={HousePick} hidden={IsHidden} highlight={Result == 'you lose'} />
+                    <Icon type={HousePick} hidden={IsHidden} highlight={Result === 'you lose' && !IsHidden} />
                 </div>
             </div>
             {renderResult(!IsNotMobile)}
