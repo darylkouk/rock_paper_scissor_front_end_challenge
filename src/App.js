@@ -10,9 +10,9 @@ import * as actions from './Actions';
 
 function App(props) {
 
-    const handlePopup = () => {
+    const handlePopup = React.useCallback(() => {
         props.openModal();
-    }
+    }, []);
 
     return ( 
     <div className='app-layout'>

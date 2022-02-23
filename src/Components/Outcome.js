@@ -43,9 +43,9 @@ function Outcome(props) {
         };
     });
 
-    const handlePlayAgain = () => {
+    const handlePlayAgain = React.useCallback(() => {
         props.handlePlayerPick('');
-    }
+    }, [])
 
     const renderResult = (flag) => {
         return flag? 
